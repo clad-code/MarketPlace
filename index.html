@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZendoMart | Online Marketplace</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="navbar">
+    <a href="#" class="logo">🛒 Zendo<span>Mart</span></a>
+
+    <div class="search-box">
+      <span>⌕</span>
+      <input type="search" id="searchInput"
+        placeholder="Search products...">
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#categories">Categories</a>
+    </nav>
+
+    <button id="cartButton" class="cart-button">
+      🛒 Cart <span id="cartCount">0</span>
+    </button>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">WELCOME TO ZENDOMART</p>
+        <h1>Great Products,<br>Better Prices.</h1>
+        <p>Shop the latest trends and find exactly what you need.</p>
+        <a href="#products" class="primary-button">Shop Now →</a>
+      </div>
+      <div class="hero-image">
+        <img
+          src="https://images.unsplash.com/photo-1498049794561-7780e7231661?auto=format&fit=crop&w=900&q=85"
+          alt="Laptop and electronic products">
+      </div>
+    </section>
+
+    <section class="categories-section" id="categories">
+      <h2>Shop by Category</h2>
+      <div class="categories" id="categoriesList">
+        <button class="category active" data-category="All">
+          <span>✦</span>All
+        </button>
+        <button class="category" data-category="Phones">
+          <span>📱</span>Phones
+        </button>
+        <button class="category" data-category="Laptops">
+          <span>💻</span>Laptops
+        </button>
+        <button class="category" data-category="Electronics">
+          <span>🎧</span>Electronics
+        </button>
+        <button class="category" data-category="Clothing">
+          <span>👕</span>Clothing
+        </button>
+        <button class="category" data-category="Shoes">
+          <span>👟</span>Shoes
+        </button>
+        <button class="category" data-category="Home">
+          <span>🏠</span>Home & Living
+        </button>
+        <button class="category" data-category="Beauty">
+          <span>✨</span>Beauty
+        </button>
+      </div>
+    </section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading">
+        <div>
+          <h2>Featured Products</h2>
+          <p>Discover something you'll love.</p>
+        </div>
+        <span id="productCount"></span>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+      <p id="emptyMessage" class="empty-message" hidden>
+        No products found. Try another search.
+      </p>
+    </section>
+
+    <section class="sell-banner">
+      <div>
+        <h2>Have something to sell?</h2>
+        <p>Join ZendoMart and showcase your products.</p>
+      </div>
+      <button id="sellButton" class="primary-button">
+        Start Selling →
+      </button>
+    </section>
+  </main>
+
+  <footer>
+    <a href="#home" class="logo">🛒 Zendo<span>Mart</span></a>
+    <p>Shop smart. Live better.</p>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#products">Shop</a>
+      <a href="#categories">Categories</a>
+    </div>
+    <p class="copyright">© 2026 ZendoMart. All rights reserved.</p>
+  </footer>
+
+  <dialog id="cartDialog" class="modal">
+    <div class="modal-heading">
+      <h2>Your Shopping Cart</h2>
+      <button id="closeCart" class="close-button">✕</button>
+    </div>
+    <div id="cartItems"></div>
+    <div class="cart-summary">
+      <strong>Total:</strong>
+      <strong id="cartTotal">KSh 0</strong>
+    </div>
+    <button id="checkoutButton" class="primary-button full-width">
+      Proceed to Checkout
+    </button>
+  </dialog>
+
+  <dialog id="sellDialog" class="modal">
+    <div class="modal-heading">
+      <h2>List a Product</h2>
+      <button id="closeSell" class="close-button">✕</button>
+    </div>
+    <form id="sellForm">
+      <label for="sellerName">Product name</label>
+      <input id="sellerName" required maxlength="80"
+        placeholder="e.g. Wireless headphones">
+
+      <label for="sellerPrice">Price (KSh)</label>
+      <input id="sellerPrice" type="number" min="1" required
+        placeholder="e.g. 2500">
+
+      <label for="sellerCategory">Category</label>
+      <select id="sellerCategory">
+        <option>Phones</option>
+        <option>Laptops</option>
+        <option>Electronics</option>
+        <option>Clothing</option>
+        <option>Shoes</option>
+        <option>Home</option>
+        <option>Beauty</option>
+      </select>
+
+      <label for="sellerImage">Image URL (optional)</label>
+      <input id="sellerImage" type="url"
+        placeholder="https://example.com/image.jpg">
+
+      <button class="primary-button full-width" type="submit">
+        Publish Product
+      </button>
+    </form>
+  </dialog>
+
+  <script src="scripts.js" type="module"></script>
+</body>
+</html>
