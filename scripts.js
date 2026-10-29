@@ -260,20 +260,8 @@ document.getElementById("sellForm")
 // Checkout placeholder
 document.getElementById("checkoutButton")
   .addEventListener("click",async () => {
-    if (cart.length === 0) {
-      alert("Your cart is empty.");
-      return;
-    }
-    const response = await fetch(
-            'http://localhost:5000/orders',
-            {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(cart)
-            }
-    );
+    alert('Will be available soon")
+      
   });
 
 // Initial page render
