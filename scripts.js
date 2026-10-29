@@ -1,5 +1,6 @@
 //import { products } from './products.js'
-const products = [
+alert('Hello')
+/*const products = [
   {
     id: 1,
     name: "Samsung Galaxy A15",
